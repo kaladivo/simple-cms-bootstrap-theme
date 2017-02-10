@@ -1,2 +1,4 @@
-export const viewsDir = __dirname;
-export const publicDir = __dirname + "/public";
+module.exports = {
+  viewsDir: __dirname,
+  publicDir: __dirname + "/public"
+}
