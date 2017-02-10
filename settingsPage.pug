@@ -1,0 +1,35 @@
+extends layout.pug
+
+block content
+  a(href=settings.adminUrl) Back to front page
+  h1 Settings
+  include contents/errorBox.pug
+  include contents/messagesBox.pug
+  p(class="lead") Here you can modify your admin's account settings.
+  div(class="box")
+    h2 Change password
+    form(action=settings.adminUrl + "/settings/changePassword", method="post")
+      input(class="form-control", type="password", name="password", placeholder="New password")
+      input(class="form-control", type="password", name="passwordCheck", placeholder="Password again")
+      input(class="submit btn btn-lg btn-primary btn-block", type="submit", value="Change password")
+
+    h2 Send invitation
+      form(action=settings.adminUrl + "/settings/inviteUser", method="post")
+        input(class="form-control", type="email", name="email", placeholder="Email")
+        input(class="submit btn btn-lg btn-primary btn-block",  type="submit", value="Send invitation")
+
+  h2 Manage users
+    table(class="table")
+      thead 
+        tr
+          td email
+          td remove
+      each user in users
+        tbody
+          tr
+            td #{user.email}
+            td 
+              unless (user._id.equals(currentUser._id))
+                a(class="btn btn-danger" href=settings.adminUrl + "/settings/removeUser/" + user._id) remove
+              else 
+                | You can not remove yourself.

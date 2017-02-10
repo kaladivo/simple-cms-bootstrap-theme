@@ -1,0 +1,14 @@
+extends layout.pug
+
+block content
+  div(class="auth-page login-page")
+    div(class="auth-box")
+      h1(class="title") Login
+      include contents/errorBox.pug
+      include contents/messagesBox.pug
+      form(class="login-form", method="post")
+        input(class="form-control", name="email", type="email", placeholder="Email", value=email)
+        input(class="form-control", name="password", type="password", placeholder="Password")
+        input(class="submit btn btn-lg btn-primary btn-block", type="submit", value="Login")
+
+      a(href=settings.adminUrl + "/resetPassword") Reset password

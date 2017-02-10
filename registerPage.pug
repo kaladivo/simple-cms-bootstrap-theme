@@ -1,0 +1,16 @@
+extends layout.pug
+
+block content
+  div(class="auth-page login-page")
+    div(class="auth-box")
+      h1(class="title") Register
+      include contents/errorBox.pug
+      form(class="login-form", method="post")
+        if(disableEmailInput)
+          input(class="form-control", name="email", type="email", placeholder="Email", value=email, disabled="true")
+        else
+          input(class="form-control", name="email", type="email", placeholder="Email", value=email)
+        input(class="form-control", name="password", type="password", placeholder="Password")
+        input(class="form-control", name="passwordCheck", type="password", placeholder="Password again")
+        input(class="submit btn btn-lg btn-primary btn-block", type="submit", value="Register")
+

@@ -1,0 +1,28 @@
+extends section.pug
+
+block content
+  include ../../contents/messagesBox.pug
+  br
+  a(class="btn btn-info" href=section.getUrl() + "/?action=new") Add new
+  br
+  br
+  table(class="table")
+    each item in items
+      tr
+        each field in previewFields
+          th 
+            a(href=section.getUrl() + "/?id=" + item._id) #{item[field]}
+        th
+          a(class="btn btn-danger" href=section.getUrl() + "/?id=" + item._id + "&action=remove") remove
+
+
+  div(class="pagination")
+    if(page > 1) 
+      a(class="btn btn-primary", href=section.getUrl() + "/?page=" + (page-1)) Previous page
+    else
+      a(disabled, class="btn btn-primary", href=section.getUrl() + "/?page=" + (page-1)) Previous page
+    span(class="location") #{page}/#{totalPages}
+    if(page < totalPages)
+      a(class="btn btn-primary", href=section.getUrl() + "/?page=" + (Number(page) + 1)) Next page
+    else
+      a(disabled, class="btn btn-primary", href=section.getUrl() + "/?page=" + (Number(page) + 1)) Next page

@@ -1,0 +1,12 @@
+extends section.pug
+
+block content
+  include ../../contents/errorBox.pug
+  include ../../contents/messagesBox.pug
+  if(fieldsHtml && fieldsHtml.length > 0)
+    form(method="post")
+      each fieldHtml in fieldsHtml
+        | !{fieldHtml}
+      input(class="submit btn btn-lg btn-primary btn-block", type="submit", value="Save")
+  else 
+    | No fields in this model

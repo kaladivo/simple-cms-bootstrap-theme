@@ -1,0 +1,14 @@
+extends layout.pug
+
+block content
+  if(backInfo) 
+    a(href=backInfo.url) #{backInfo.title}
+  else
+    if(section.parent)
+      a(href=section.parent.getUrl()) Back to #{section.parent.title}
+    else 
+      a(href=settings.adminUrl) Back to the front page.
+
+  h1 #{section.title}
+  p(class="lead") #{section.description}
+  | !{sectionHtml}

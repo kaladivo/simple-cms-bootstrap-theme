@@ -1,0 +1,8 @@
+extends section.pug
+
+block content
+  if(section.children)
+    ul(class="children")
+      each child in section.children
+        li
+          a(href=child.getUrl()) #{child.title}

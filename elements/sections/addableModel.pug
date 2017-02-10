@@ -1,0 +1,17 @@
+extends section.pug
+
+block content
+  include ../../contents/errorBox.pug
+  include ../../contents/messagesBox.pug
+  if(request.query.id)
+    div
+      a(class="btn btn-danger", href=section.parent.getUrl() + "/?action=remove&id=" + request.query.id) remove
+      br
+      br
+  if(fieldsHtml && fieldsHtml.length > 0)
+    form(method="post")
+      each fieldHtml in fieldsHtml
+        | !{fieldHtml}
+      input(class="submit btn btn-lg btn-primary btn-block", type="submit", value="Save")
+  else 
+    | No fields in this model

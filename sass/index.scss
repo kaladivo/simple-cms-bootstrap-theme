@@ -1,0 +1,63 @@
+@import "globals";
+
+@import "resets/resets";
+
+body, html {
+  font-family: 'Lato', sans-serif;
+  background-color: #EEEEEE;
+  font-size: 16px;
+}
+
+.auth-page {
+}
+
+.box, .auth-box{
+  max-width: 330px;
+}
+
+.auth-box {
+  margin: 0 auto;
+}
+
+form {
+  input, .form-control {
+    margin-bottom: -1;
+    border-radius: 0;
+    padding: 10px;
+    font-size: 16px;
+    height: auto;
+  }
+
+  input[type=submit] {
+    margin-top: 1rem;
+    border-radius: 0 !important;
+  }
+}
+
+.btn {
+  border-radius: 0 !important;
+}
+
+.alert {
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+}
+
+.CodeMirror {
+    height: 200px;
+}
+
+.navbar {
+  border-radius: 0 !important;
+}
+
+table thead td {
+  font-weight: bold;
+}
+
+.pagination .location {
+  margin: 0 1rem;
+}
