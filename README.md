@@ -9,8 +9,8 @@ npm install --save simple-cms-bootstrap-theme
 Then include paths in config object
 
 ```
-import theme from 'simple-cms-bootstrap-theme',
-import {viewsDir, publicDir as viewsPublicDir} from 'simple-cms',
+import {viewsDir, publicDir as viewsPublicDir} from 'simple-cms-bootstrap-theme',
+import SimpleCms from 'simple-cms',
 
 ...
 
